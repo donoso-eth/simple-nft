@@ -32,6 +32,7 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@chainlink/contracts": "^0.3.1",
     "@download/blockies": "^1.0.3",
     "@openzeppelin/contracts": "^4.4.2",
     "ang-jsoneditor": "^1.10.5",

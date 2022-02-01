@@ -13,6 +13,14 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "LinkTokenInterface",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.LinkTokenInterface__factory>;
+    getContractFactory(
+      name: "VRFConsumerBase",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VRFConsumerBase__factory>;
+    getContractFactory(
       name: "Ownable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Ownable__factory>;
@@ -60,7 +68,21 @@ declare module "hardhat/types/runtime" {
       name: "SimpleNftContract",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.SimpleNftContract__factory>;
+    getContractFactory(
+      name: "RandomNumberConsumer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RandomNumberConsumer__factory>;
 
+    getContractAt(
+      name: "LinkTokenInterface",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.LinkTokenInterface>;
+    getContractAt(
+      name: "VRFConsumerBase",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VRFConsumerBase>;
     getContractAt(
       name: "Ownable",
       address: string,
@@ -121,6 +143,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.SimpleNftContract>;
+    getContractAt(
+      name: "RandomNumberConsumer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.RandomNumberConsumer>;
 
     // default types
     getContractFactory(
