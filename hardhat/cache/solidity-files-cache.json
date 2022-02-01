@@ -629,8 +629,8 @@
       ]
     },
     "/Users/javier/Documents/WEB/BLOCKCHAIN/simple-nft/hardhat/contracts/VfrContract.sol": {
-      "lastModificationDate": 1643713642852,
-      "contentHash": "199a739f181b23e81cf3b413d91d4800",
+      "lastModificationDate": 1643714594837,
+      "contentHash": "5b76cf9cfeffda9ea1d29dcf932c4c17",
       "sourceName": "contracts/VfrContract.sol",
       "solcConfig": {
         "version": "0.8.4",

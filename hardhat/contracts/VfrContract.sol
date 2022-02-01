@@ -18,9 +18,8 @@ contract RandomNumberConsumer is VRFConsumerBase {
     
     bytes32 internal keyHash;
     uint256 internal fee;
-    
     uint256 public randomResult;
-    
+    mapping (address => bytes32) public requestToRandom;
     /**
      * Constructor inherits VRFConsumerBase
      * 

@@ -24,6 +24,7 @@ interface RandomNumberConsumerInterface extends ethers.utils.Interface {
     "getRandomNumber()": FunctionFragment;
     "randomResult()": FunctionFragment;
     "rawFulfillRandomness(bytes32,uint256)": FunctionFragment;
+    "requestToRandom(uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -38,6 +39,10 @@ interface RandomNumberConsumerInterface extends ethers.utils.Interface {
     functionFragment: "rawFulfillRandomness",
     values: [BytesLike, BigNumberish]
   ): string;
+  encodeFunctionData(
+    functionFragment: "requestToRandom",
+    values: [BigNumberish]
+  ): string;
 
   decodeFunctionResult(
     functionFragment: "getRandomNumber",
@@ -49,6 +54,10 @@ interface RandomNumberConsumerInterface extends ethers.utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "rawFulfillRandomness",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "requestToRandom",
     data: BytesLike
   ): Result;
 
@@ -110,6 +119,11 @@ export class RandomNumberConsumer extends BaseContract {
       randomness: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
+
+    requestToRandom(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
   };
 
   getRandomNumber(
@@ -124,6 +138,11 @@ export class RandomNumberConsumer extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  requestToRandom(
+    arg0: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
+
   callStatic: {
     getRandomNumber(overrides?: CallOverrides): Promise<string>;
 
@@ -134,6 +153,11 @@ export class RandomNumberConsumer extends BaseContract {
       randomness: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    requestToRandom(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
   };
 
   filters: {};
@@ -150,6 +174,11 @@ export class RandomNumberConsumer extends BaseContract {
       randomness: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
+
+    requestToRandom(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -163,6 +192,11 @@ export class RandomNumberConsumer extends BaseContract {
       requestId: BytesLike,
       randomness: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    requestToRandom(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }
