@@ -85,11 +85,6 @@ export class OnChainService {
     const mywallet =  await this.newWallet.init(this.myProvider.Provider)
     this.simpleNftContract=  new AngularContract(this.simpleNftContractMetadata)
     await this.simpleNftContract.init(this.myProvider.Provider,mywallet)
-    console.log('doen')
-    ///// INIOTIALZING IPFS 
-   await this.loadTagToPromise({name: "ipfs_client_css", type:'link', args:[{name:'rel',value:'stylesheet'}, {name:"href",value:"https://unpkg.com/jsoneditor@9.6.0/dist/jsoneditor.min.css"}]})
-   console.log('doen')
-   await this.loadTagToPromise({name: "ipfs_client", type:'script',args:[ {name:"src", value:"https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"},{name:"type",value:'text/javascript'}]})
-   console.log('doen')
+
   }
 }

@@ -8,19 +8,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { blockchain_imports, blockchain_providers } from './blockchain_wiring';
 import { OnChainService } from './on-chain.service';
-import { NgxJsonViewerModule } from 'ngx-json-viewer';
-import { NgJsonEditorModule } from 'ang-jsoneditor';
-import { IpfsUploadComponent } from './ipfs-upload/ipfs-upload.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IpfsDownloadComponent } from './ipfs-upload/ipfs-download.component';
+import { IpfsModule } from './ipfs/ipfs.module';
 
 
 
 @NgModule({
   declarations: [
     SimpleNftExampleComponent,
-    IpfsUploadComponent,
-    IpfsDownloadComponent,
+
   ],
   imports: [
     CommonModule,
@@ -28,11 +24,10 @@ import { IpfsDownloadComponent } from './ipfs-upload/ipfs-download.component';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-
     MatFormFieldModule,
     MatIconModule,
     MatTabsModule,
-    NgJsonEditorModule,
+    IpfsModule,
     blockchain_imports
   ],
   providers:[...blockchain_providers,OnChainService],
