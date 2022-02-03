@@ -36,6 +36,7 @@
     "@download/blockies": "^1.0.3",
     "@metamask/detect-provider": "^1.2.0",
     "@openzeppelin/contracts": "^4.4.2",
+    "@superfluid-finance/ethereum-contracts": "^1.0.0-rc.11",
     "@superfluid-finance/sdk-core": "^0.2.1",
     "ang-jsoneditor": "^1.10.5",
     "async": "^3.2.3",

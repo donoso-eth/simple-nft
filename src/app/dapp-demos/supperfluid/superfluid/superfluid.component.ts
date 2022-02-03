@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getDefaultProvider, providers } from 'ethers';
 //import detectProvider from '@metamask/detect-provider'
-import {Framework} from '@superfluid-finance/sdk-core'
+//import {Framework} from '@superfluid-finance/sdk-core'
 import { AngularContract } from 'angular-web3';
 import { fUSDCx_address, fUSDC_address } from './config';
 import { fUSDCxabi } from './abis/fUSDCxabi';
